@@ -1,0 +1,32 @@
+{
+  "name": "flipflag-marketplace",
+  "owner": {
+    "name": "FlipFlag"
+  },
+  "metadata": {
+    "description": "FlipFlag CLI plugin marketplace",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "flipflag-cli",
+      "source": "./plugins",
+      "description": "FlipFlag CLI for task management, time tracking, and feature flag code review",
+      "version": "1.0.0",
+      "author": {
+        "name": "FlipFlag"
+      },
+      "repository": "https://github.com/flipflag-dev/claude-marketplace",
+      "license": "MIT",
+      "keywords": [
+        "task-management",
+        "time-tracking",
+        "feature-flags",
+        "code-review",
+        "git",
+        "productivity"
+      ],
+      "category": "productivity"
+    }
+  ]
+}

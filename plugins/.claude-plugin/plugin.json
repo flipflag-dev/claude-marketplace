@@ -1,0 +1,8 @@
+{
+  "name": "flipflag-cli",
+  "version": "1.0.0",
+  "description": "FlipFlag CLI for task management, time tracking, and feature flag code review",
+  "author": {
+    "name": "FlipFlag"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "description": "FlipFlag CLI session hooks for task detection",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Check if the user is on a git branch that looks like a task branch. Run: git rev-parse --abbrev-ref HEAD 2>/dev/null\n\nIf the branch matches a task pattern (feature/TASK-ID, bugfix/TASK-ID, or starts with a task ID like EMD-1234), and the branch is NOT main, master, develop, development, staging, or production:\n\n1. Check if .flipflag.yml exists and if the task has an open time tracking session (finished: null)\n2. If already tracking, just inform: 'Task TASK-ID is already being tracked.'\n3. If NOT tracking, ASK the user: 'I noticed you're on branch X which looks like task TASK-ID. Would you like me to start FlipFlag time tracking? Reply yes to start or no to skip.'\n\nIf the branch doesn't match a task pattern or is a protected branch, do nothing and continue silently.",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
