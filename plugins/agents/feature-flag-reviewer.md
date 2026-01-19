@@ -1,7 +1,7 @@
 ---
 name: feature-flag-reviewer
 description: Reviews code for proper feature flag implementation. Checks useFlag()/useFlags() hooks (React) and isEnabled() method (Node SDK). Validates naming conventions, enabled/disabled path coverage, and dead code from removed flags. Use for code reviews or before merging feature flag changes.
-model: inherit
+model: haiku
 color: cyan
 tools: ["Read", "Grep", "Glob", "Bash(git diff:*)", "Bash(git show:*)"]
 ---
