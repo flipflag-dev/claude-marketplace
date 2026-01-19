@@ -7,25 +7,24 @@ Task management, time tracking, and feature flag code review for Claude Code.
 - **`/flipflag` command** - Start/stop work on tasks with automatic git branch creation and time tracking
 - **`/ff-status` command** - Check current task status, time sessions, and contributor info
 - **Feature Flag Reviewer agent** - Reviews code for proper FlipFlag SDK usage (React hooks & Node.js)
-- **SessionStart hook** - Automatically detects task branches and offers to start time tracking
 
 ## Prerequisites
 
-- FlipFlag CLI installed globally (`npm install -g flipflag`)
+- FlipFlag CLI installed globally (`npm install -g @flipflag/cli`)
 
 ## Installation
 
 ### Option 1: Install from GitHub
 
 ```bash
-claude /install flipflag-dev/claude-plugins
+claude /plugin marketplace add flipflag-dev/claude-marketplace
 ```
 
 ### Option 2: Clone and load locally
 
 ```bash
-git clone https://github.com/flipflag-dev/claude-plugins.git
-claude --plugin-dir /path/to/claude-plugins
+git clone https://github.com/flipflag-dev/claude-marketplace.git
+claude --plugin-dir /path/to/claude-marketplace
 ```
 
 ### Option 3: Copy to project
@@ -88,7 +87,6 @@ The feature flag reviewer agent is triggered during code reviews or when examini
 | `/ff-status` | Command | Display task status from `.flipflag.yml` |
 | `feature-flag-reviewer` | Agent | Reviews code for proper FlipFlag SDK usage |
 | `flipflag-cli` | Skill | CLI task management skill with usage reference |
-| SessionStart hook | Hook | Detects task branches and offers to start tracking |
 
 ## Configuration
 
@@ -124,16 +122,6 @@ The plugin can auto-detect task IDs from branch names:
 Task type is inferred from the task ID:
 - Contains "bug", "fix", or "hotfix" → `bugfix`
 - Otherwise → `feature`
-
-## SessionStart Hook
-
-When you start a Claude Code session on a task branch, the hook will:
-
-1. Detect if the branch matches a task pattern
-2. Check if time tracking is already active in `.flipflag.yml`
-3. If not tracking, ask if you want to start time tracking
-
-Protected branches (`main`, `master`, `develop`, `development`, `staging`, `production`) are ignored.
 
 ## License
 
